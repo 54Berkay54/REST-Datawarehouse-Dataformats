@@ -1,13 +1,20 @@
-package rest.model;
+package tradearea.model;
 
 public class ProductData {
 
     private String productId;
     private String productName;
     private String productCategory;
-    private double productQuantity;
+    private int productQuantity;
     private String productUnit;
 
+    public ProductData(String productId, String productName, String productCategory, int productQuantity, String productUnit) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productCategory = productCategory;
+        this.productQuantity = productQuantity;
+        this.productUnit = productUnit;
+    }
     public  String getProductId() {
         return productId;
     }
@@ -32,7 +39,7 @@ public class ProductData {
     public double getProductQuantity() {
         return productQuantity;
     }
-    public void setProductQuantity(double productQuantity) {
+    public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
     }
 

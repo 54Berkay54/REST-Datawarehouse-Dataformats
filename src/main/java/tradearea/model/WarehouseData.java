@@ -1,11 +1,14 @@
-package rest.model;
+package tradearea.model;
+
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
+@JacksonXmlRootElement(localName = "warehouse")
 public class WarehouseData {
 	
 	private String warehouseID;
@@ -25,7 +28,7 @@ public class WarehouseData {
 		this.timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
 	}
 
-    public ProductData getProduct(String productID) {
+    public ProductData getProducts(String productID) {
         Iterator<ProductData> iterator = products.iterator();
         while (iterator.hasNext()) {
             ProductData product = iterator.next();
@@ -36,6 +39,9 @@ public class WarehouseData {
         return null;
     }
 
+    public void setProducts(HashSet<ProductData> products) {
+        this.products = products;
+    }
     public HashSet<ProductData> getAllProducts() {
         if(this.products == null) {
             return null;

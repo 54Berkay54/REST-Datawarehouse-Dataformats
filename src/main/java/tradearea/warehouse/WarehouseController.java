@@ -1,4 +1,4 @@
-package rest.warehouse;
+package tradearea.warehouse;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.MediaType;
 
-import rest.model.WarehouseData;
+import tradearea.model.WarehouseData;
 
 @RestController
 public class WarehouseController {
@@ -25,6 +25,11 @@ public class WarehouseController {
 
     @RequestMapping(value="/warehouse/{inID}/json", produces = MediaType.APPLICATION_JSON_VALUE)
     public WarehouseData warehouseData( @PathVariable String inID ) {
+        return service.getWarehouseData( inID );
+    }
+
+    @RequestMapping(value="/warehouse/{inID}/xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public WarehouseData warehouseDataXML( @PathVariable String inID ) {
         return service.getWarehouseData( inID );
     }
 
