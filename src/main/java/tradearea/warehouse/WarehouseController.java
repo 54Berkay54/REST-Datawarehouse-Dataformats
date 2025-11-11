@@ -32,5 +32,4 @@ public class WarehouseController {
     public WarehouseData warehouseDataXML( @PathVariable String inID ) {
         return service.getWarehouseData( inID );
     }
-
 }
