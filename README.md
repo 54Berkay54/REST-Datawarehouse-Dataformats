@@ -54,7 +54,7 @@ Implementierung der REST Schnittstelle & Daten im JSON und XML Format zur Verfue
 <!-- Dropdown für Warehouse Auswahl -->
 <label for="warehouseSelect">Warehouse auswählen:</label>
 <select id="warehouseSelect">
-    <option value="001">Linz Bahnhof</option>
+    <option value="001">Lagerhaus Wien</option>
     <option value="002">Lagerhaus Salzburg</option>
     <option value="003">Lagerhaus Graz</option>
 </select>
@@ -118,7 +118,7 @@ function renderData() {
         .forEach(p => {
             const row = `
                         <tr>
-                            <td>${p.productID}</td>
+                            <td>${p.productId}</td>
                             <td>${p.productName}</td>
                             <td>${p.productCategory}</td>
                             <td>${p.productQuantity}</td>
