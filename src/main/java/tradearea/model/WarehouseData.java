@@ -6,6 +6,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
+import  java.util.Set;
+import java.util.List;
 import java.util.Iterator;
 
 @JacksonXmlRootElement(localName = "warehouse")
@@ -19,7 +21,7 @@ public class WarehouseData {
     private String warehouseCountry;
 	private String timestamp;
 
-    private HashSet<ProductData> products;
+    private List<ProductData> products;
 
 	/**
 	 * Constructor
@@ -39,24 +41,22 @@ public class WarehouseData {
         return null;
     }
 
-    public void setProducts(HashSet<ProductData> products) {
+    public void setProducts(List<ProductData> products) {
         this.products = products;
     }
-    public HashSet<ProductData> getAllProducts() {
+    public List<ProductData> getAllProducts() {
         if(this.products == null) {
             return null;
         }
         return this.products;
     }
 
-    public boolean addProduct(ProductData product) {
-        if (this.products == null) {
-            return false;
+    public void addProduct(List<ProductData> products) {
+        if ( this.products == null ) {
+            this.products = products;
+            return;
         }
-        if (this.products.contains(product)) {
-            return false;
-        }
-        return this.products.add(product);
+        this.products.addAll(products);
     }
 	
 	/**
