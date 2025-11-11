@@ -16,7 +16,7 @@
 <!-- Dropdown für Warehouse Auswahl -->
 <label for="warehouseSelect">Warehouse auswählen:</label>
 <select id="warehouseSelect">
-    <option value="001">Linz Bahnhof</option>
+    <option value="001">Lagerhaus Wien</option>
     <option value="002">Lagerhaus Salzburg</option>
     <option value="003">Lagerhaus Graz</option>
 </select>
@@ -26,7 +26,7 @@
 
 <!-- Filter -->
 <label for="productName">Produktname:</label>
-<input type="text" id="productName" placeholder="z.B. Mouse">
+<input type="text" id="productName" placeholder="z.B. Laptop">
 
 <!-- Tabelle -->
 <table id="productTable">
@@ -83,7 +83,7 @@
             .forEach(p => {
                 const row = `
                         <tr>
-                            <td>${p.productID}</td>
+                            <td>${p.productId}</td>
                             <td>${p.productName}</td>
                             <td>${p.productCategory}</td>
                             <td>${p.productQuantity}</td>
