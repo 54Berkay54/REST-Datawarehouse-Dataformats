@@ -27,37 +27,37 @@ public class WarehouseSimulation {
 	}
 
     public WarehouseData getData( String inID ) {
-        WarehouseData wd = new WarehouseData();
+        WarehouseData wd1 = new WarehouseData();
         WarehouseData wd2 = new WarehouseData();
         WarehouseData wd3 = new WarehouseData();
 
-        wd.setWarehouseID("001");
+        wd1.setWarehouseID("001");
         wd2.setWarehouseID("002");
         wd3.setWarehouseID("003");
 
-        wd.setWarehouseName("Lagerhaus Wien");
+        wd1.setWarehouseName("Lagerhaus Wien");
         wd2.setWarehouseName("Lagerhaus Salzburg");
         wd3.setWarehouseName("Lagerhaus Graz");
 
-        wd.setWarehouseAddress("Effingergasse 18");
+        wd1.setWarehouseAddress("Effingergasse 18");
         wd2.setWarehouseAddress("Fanny-von-Lehnert-Straße 5");
         wd3.setWarehouseAddress("Anzengrubergasse 1");
 
-        wd.setWarehousePostalCode("1170");
+        wd1.setWarehousePostalCode("1170");
         wd2.setWarehousePostalCode("5020");
         wd3.setWarehousePostalCode("8010");
 
-        wd.setWarehouseCity("Wien");
+        wd1.setWarehouseCity("Wien");
         wd2.setWarehouseCity("Salzburg");
         wd3.setWarehouseCity("Graz");
 
-        wd.setWarehouseCountry("Österreich");
+        wd1.setWarehouseCountry("Österreich");
         wd2.setWarehouseCountry("Österreich");
         wd3.setWarehouseCountry("Österreich");
 
         List<ProductData> products = new ArrayList<>();
 
-        ProductData wp = new ProductData("P001", "Laptop", "Electronics", getRandomInt(10, 100), "pcs");
+        ProductData wp1 = new ProductData("P001", "Laptop", "Electronics", getRandomInt(10, 100), "pcs");
         ProductData wp2 = new ProductData("P002", "Smartphone", "Electronics", getRandomInt(20, 200), "pcs");
         ProductData wp3 = new ProductData("P003", "Tablet", "Electronics", getRandomInt(15, 150), "pcs");
         ProductData wp4 = new ProductData("P004", "Headphones", "Accessories", getRandomInt(30, 300), "pcs");
@@ -68,7 +68,7 @@ public class WarehouseSimulation {
         ProductData wp9 = new ProductData("P009", "Keyboard", "Accessories", getRandomInt(25, 250), "pcs");
         ProductData wp10 = new ProductData("P010", "Mouse", "Accessories", getRandomInt(30, 300), "pcs");
 
-        products.add(wp);
+        products.add(wp1);
         products.add(wp2);
         products.add(wp3);
         products.add(wp4);
@@ -84,11 +84,11 @@ public class WarehouseSimulation {
             products.remove(i);
         }
         products.sort((a, b) -> a.getProductId().compareTo(b.getProductId()));
-        System.out.println(wd.getTimestamp());
+        System.out.println(wd1.getTimestamp());
         switch (inID) {
             case "001":
-                wd.addProduct(products);
-                return wd;
+                wd1.addProduct(products);
+                return wd1;
             case "002":
                 wd2.addProduct(products);
                 return wd2;
